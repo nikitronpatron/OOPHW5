@@ -48,7 +48,7 @@ public class Main
                 String[] arguments = Arrays.copyOfRange(split, 1, split.length);
 
                 try {
-                    robot = new Robot(arguments[0], Integer.parseInt(arguments[1]), Integer.parseInt(arguments[2]));
+                    robot = Robot(arguments[0], Integer.parseInt(arguments[1]), Integer.parseInt(arguments[2]));
                     System.out.println(robot.toString());
                     break;
                 }
@@ -61,8 +61,6 @@ public class Main
             }
         }
 
-        
-
         while(true) {
             String command = in.nextLine();
             if(command.startsWith("move-robot")) {
@@ -70,7 +68,7 @@ public class Main
                 String[] arguments = Arrays.copyOfRange(split, 1, split.length);
 
                 try {
-                    robot = Robot.move();
+                    robot.move();
                     break;
                 }
                 catch(IllegalArgumentException e) {
@@ -89,7 +87,7 @@ public class Main
                 String[] arguments = Arrays.copyOfRange(split, 1, split.length);
 
                 try {
-                    robot = Robot.changeDirection(arguments[0]);
+                    robot.changeDirection(arguments[0]);
                     break;
                 }
                 catch(IllegalArgumentException e) {
